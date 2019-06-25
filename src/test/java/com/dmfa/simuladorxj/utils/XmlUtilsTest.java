@@ -1,11 +1,13 @@
 package com.dmfa.simuladorxj.utils;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.File;
 
 import org.junit.jupiter.api.Test;
 
+import com.dmfa.simuladorxj.beans.ApplicationType;
 import com.dmfa.simuladorxj.beans.Config;
 
 class XmlUtilsTest {
@@ -16,4 +18,14 @@ class XmlUtilsTest {
 		assertEquals(1, config.getAplications().size());
 	}
 
+	@Test
+	void parseToXml() {
+		Config config = new Config();
+		ApplicationType app = new ApplicationType();
+		app.setName("aplicaciongenerado");
+		config.getAplications().add(app);
+		
+		System.out.println(XmlUtils.parseToXml(config));
+		assertTrue(XmlUtils.parseToXml(config).contains("aplicaciongenerado"));
+	}
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <config>
   <aplication>
-    <name>str1234</name>
+    <name>aplicacionPrueba</name>
     <searchCriteria>
       <type>string</type>
       <criteria>str1234</criteria>
