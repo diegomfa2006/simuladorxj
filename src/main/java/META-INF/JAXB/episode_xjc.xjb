@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jaxb:bindings version="2.1" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb">
+  <!--
+
+Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.3.0 
+Visite <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
+Generado el: 2019.06.25 a las 01:41:18 AM ECT 
+
+  -->
+  <jaxb:bindings scd="x-schema::">
+    <jaxb:schemaBindings map="false">
+      <jaxb:package name="com.dmfa.simuladorxj.beans"/>
+    </jaxb:schemaBindings>
+    <jaxb:bindings scd="config">
+      <jaxb:class ref="com.dmfa.simuladorxj.beans.Config"/>
+    </jaxb:bindings>
+    <jaxb:bindings scd="~applicationType">
+      <jaxb:class ref="com.dmfa.simuladorxj.beans.ApplicationType"/>
+    </jaxb:bindings>
+    <jaxb:bindings scd="~searchCriteriaType">
+      <jaxb:class ref="com.dmfa.simuladorxj.beans.SearchCriteriaType"/>
+    </jaxb:bindings>
+    <jaxb:bindings scd="~messageType">
+      <jaxb:class ref="com.dmfa.simuladorxj.beans.MessageType"/>
+    </jaxb:bindings>
+    <jaxb:bindings scd="~RequestConfigType">
+      <jaxb:class ref="com.dmfa.simuladorxj.beans.RequestConfigType"/>
+    </jaxb:bindings>
+    <jaxb:bindings scd="~ResponseConfigType">
+      <jaxb:class ref="com.dmfa.simuladorxj.beans.ResponseConfigType"/>
+    </jaxb:bindings>
+    <jaxb:bindings scd="~headerType">
+      <jaxb:class ref="com.dmfa.simuladorxj.beans.HeaderType"/>
+    </jaxb:bindings>
+    <jaxb:bindings scd="~searchType">
+      <jaxb:typesafeEnumClass ref="com.dmfa.simuladorxj.beans.SearchType"/>
+    </jaxb:bindings>
+  </jaxb:bindings>
+</jaxb:bindings>
+

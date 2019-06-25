@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+  <aplication>
+    <name>str1234</name>
+    <searchCriteria>
+      <type>string</type>
+      <criteria>str1234</criteria>
+      <evalValue>str1234</evalValue>
+    </searchCriteria>
+    <request>
+      <encoding>str1234</encoding>
+    </request>
+    <response>
+      <encoding>str1234</encoding>
+      <code>str1234</code>
+      <header>
+        <key>str1234</key>
+        <value>str1234</value>
+      </header>
+      <delay>123</delay>
+    </response>
+    <message>
+      <name>str1234</name>
+      <description>str1234</description>
+      <searchCriteria>
+        <type>string</type>
+        <criteria>str1234</criteria>
+        <evalValue>str1234</evalValue>
+      </searchCriteria>
+      <request>
+        <encoding>str1234</encoding>
+      </request>
+      <response>
+        <encoding>str1234</encoding>
+        <code>str1234</code>
+        <header>
+          <key>str1234</key>
+          <value>str1234</value>
+        </header>
+        <delay>123</delay>
+      </response>
+      <responseFile>str1234</responseFile>
+    </message>
+  </aplication>
+</config>

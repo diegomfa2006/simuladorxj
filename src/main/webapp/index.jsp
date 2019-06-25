@@ -63,33 +63,35 @@
 
     <form>
       <div class="form-group row">
-        <label for="staticEmail" class="col-sm-2 col-form-label">Aplicacion</label>
+        <label for="staticEmail" class="col-sm-2 col-form-label col-form-label-sm">Aplicacion</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control-plaintext" id="staticEmail" placeholder="Nombre de la aplicacion">
+          <input type="text" class="form-control-plaintext form-control-sm" id="staticEmail"
+            placeholder="Nombre de la aplicacion">
         </div>
       </div>
       <div class="form-group row">
-        <label for="inputPassword" class="col-sm-2 col-form-label">Codificacion</label>
+        <label for="inputPassword" class="col-sm-2 col-form-label col-form-label-sm">Codificacion</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control-plaintext" id="inputPassword" placeholder="Default UTF-8">
+          <input type="text" class="form-control-plaintext form-control-sm" id="inputPassword"
+            placeholder="Default UTF-8">
         </div>
       </div>
       <div class="form-group row">
-        <label for="inputPassword" class="col-sm-2 col-form-label">Tipo de busqueda</label>
+        <label for="inputPassword" class="col-sm-2 col-form-label col-form-label-sm">Tipo de busqueda</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control-plaintext" id="inputPassword" placeholder="Password">
+          <input type="text" class="form-control-plaintext form-control-sm" id="inputPassword" placeholder="Password">
         </div>
       </div>
       <div class="form-group row">
-        <label for="inputPassword" class="col-sm-2 col-form-label">Condicion de busqueda</label>
+        <label for="inputPassword" class="col-sm-2 col-form-label col-form-label-sm">Condicion de busqueda</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control-plaintext" id="inputPassword" placeholder="Password">
+          <input type="text" class="form-control-plaintext form-control-sm" id="inputPassword" placeholder="Password">
         </div>
       </div>
       <div class="form-group row">
-        <label for="inputPassword" class="col-sm-2 col-form-label">Valor esperado</label>
+        <label for="inputPassword" class="col-sm-2 col-form-label col-form-label-sm">Valor esperado</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control-plaintext" id="inputPassword" placeholder="Password">
+          <input type="text" class="form-control-plaintext form-control-sm" id="inputPassword" placeholder="Password">
         </div>
       </div>
       <div class="form-group row">
@@ -109,51 +111,64 @@
 
     <form>
       <div class="form-group row">
-        <label for="staticEmail" class="col-sm-2 col-form-label">Nombre de mensajeria</label>
+        <label for="staticEmail" class="col-sm-2 col-form-label col-form-label-sm">Nombre de mensajeria</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control-plaintext" id="staticEmail" placeholder="Nombre de la aplicacion">
+          <input type="text" class="form-control-plaintext form-control-sm" id="staticEmail"
+            placeholder="Nombre de la aplicacion">
         </div>
       </div>
       <div class="form-group row">
-        <label for="staticEmail" class="col-sm-2 col-form-label">Descripcion</label>
+        <label for="staticEmail" class="col-sm-2 col-form-label col-form-label-sm">Descripcion</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control-plaintext" id="staticEmail" placeholder="Nombre de la aplicacion">
+          <input type="text" class="form-control-plaintext form-control-sm" id="staticEmail"
+            placeholder="Nombre de la aplicacion">
         </div>
       </div>
       <div class="form-group row">
-        <label for="inputPassword" class="col-sm-2 col-form-label">Codificacion RQ</label>
+        <label for="inputPassword" class="col-sm-2 col-form-label col-form-label-sm">Codificacion RQ</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control-plaintext" id="inputPassword" placeholder="Default UTF-8">
+          <input type="text" class="form-control-plaintext form-control-sm" id="inputPassword"
+            placeholder="Default UTF-8">
         </div>
       </div>
       <div class="form-group row">
-        <label for="inputPassword" class="col-sm-2 col-form-label">Tipo de busqueda</label>
+        <label for="inputPassword" class="col-sm-2 col-form-label col-form-label-sm">Tipo de busqueda</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control-plaintext" id="inputPassword" placeholder="Password">
+          <input type="text" class="form-control-plaintext form-control-sm" id="inputPassword" placeholder="Password">
         </div>
       </div>
       <div class="form-group row">
-        <label for="inputPassword" class="col-sm-2 col-form-label">Condicion de busqueda</label>
+        <label for="inputPassword" class="col-sm-2 col-form-label col-form-label-sm">Condicion de busqueda</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control-plaintext" id="inputPassword" placeholder="Password">
+          <input type="text" class="form-control-plaintext form-control-sm" id="inputPassword" placeholder="Password">
         </div>
       </div>
       <div class="form-group row">
-        <label for="inputPassword" class="col-sm-2 col-form-label">Valor esperado</label>
+        <label for="inputPassword" class="col-sm-2 col-form-label col-form-label-sm">Valor esperado</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control-plaintext" id="inputPassword" placeholder="Password">
+          <input type="text" class="form-control-plaintext form-control-sm" id="inputPassword" placeholder="Password">
         </div>
       </div>
       <div class="form-group row">
-        <label for="inputPassword" class="col-sm-2 col-form-label">Headers</label>
+        <label for="inputPassword" class="col-sm-2 col-form-label col-form-label-sm">Headers</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control-plaintext" id="inputPassword" placeholder="Default UTF-8">
+          <input type="text" class="form-control-plaintext form-control-sm" id="inputPassword"
+            placeholder="Default UTF-8">
         </div>
       </div>
       <div class="form-group row">
-        <label for="inputPassword" class="col-sm-2 col-form-label">Mensajeria de respuesta</label>
+        <label for="inputPassword" class="col-sm-2 col-form-label col-form-label-sm">Codigo de respuesta</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control-plaintext" id="inputPassword" placeholder="Password">
+          <input type="text" class="form-control-plaintext form-control-sm" id="inputPassword"
+            placeholder="Por defecto 200">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="txtMensaje" class="col-sm-2 col-form-label col-form-label-sm">Mensajeria de respuesta</label>
+      </div>
+      <div class="form-group row">
+        <div class="col-sm-12">
+          <textarea class="form-control-plaintext" id="txtMensaje" rows="3" placeholder="Password"></textarea>
         </div>
       </div>
       <div class="form-group row">
