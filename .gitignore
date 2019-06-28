@@ -28,6 +28,7 @@ target/
 .project
 .settings
 .metadata
+*.xjb
 
 # Systems files
 .DS_Store

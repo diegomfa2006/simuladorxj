@@ -2,7 +2,7 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.3.0 
 // Visite <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2019.06.25 a las 01:41:18 AM ECT 
+// Generado el: 2019.06.27 a las 10:59:46 AM ECT 
 //
 
 
@@ -28,7 +28,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="aplication" type="{}applicationType" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="application" type="{}applicationType" maxOccurs="unbounded" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -39,7 +39,7 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "aplications"
+    "applications"
 })
 @XmlRootElement(name = "config")
 public class Config
@@ -47,22 +47,22 @@ public class Config
 {
 
     private final static long serialVersionUID = -1L;
-    @XmlElement(name = "aplication")
-    protected List<ApplicationType> aplications;
+    @XmlElement(name = "application")
+    protected List<ApplicationType> applications;
 
     /**
-     * Gets the value of the aplications property.
+     * Gets the value of the applications property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the aplications property.
+     * This is why there is not a <CODE>set</CODE> method for the applications property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getAplications().add(newItem);
+     *    getApplications().add(newItem);
      * </pre>
      * 
      * 
@@ -72,11 +72,11 @@ public class Config
      * 
      * 
      */
-    public List<ApplicationType> getAplications() {
-        if (aplications == null) {
-            aplications = new ArrayList<ApplicationType>();
+    public List<ApplicationType> getApplications() {
+        if (applications == null) {
+            applications = new ArrayList<ApplicationType>();
         }
-        return this.aplications;
+        return this.applications;
     }
 
 }

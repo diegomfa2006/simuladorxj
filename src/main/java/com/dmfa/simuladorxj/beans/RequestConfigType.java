@@ -2,7 +2,7 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.3.0 
 // Visite <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2019.06.25 a las 01:41:18 AM ECT 
+// Generado el: 2019.06.27 a las 10:59:46 AM ECT 
 //
 
 
@@ -16,16 +16,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para RequestConfigType complex type.
+ * <p>Clase Java para requestConfigType complex type.
  * 
  * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
- * &lt;complexType name="RequestConfigType"&gt;
+ * &lt;complexType name="requestConfigType"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="encoding" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="encoding" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -35,7 +35,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "RequestConfigType", propOrder = {
+@XmlType(name = "requestConfigType", propOrder = {
     "encoding"
 })
 public class RequestConfigType
@@ -43,7 +43,7 @@ public class RequestConfigType
 {
 
     private final static long serialVersionUID = -1L;
-    @XmlElement(required = true)
+    @XmlElement(defaultValue = "UTF-8")
     protected String encoding;
 
     /**

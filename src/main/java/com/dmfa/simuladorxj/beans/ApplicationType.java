@@ -2,7 +2,7 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.3.0 
 // Visite <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2019.06.25 a las 01:41:18 AM ECT 
+// Generado el: 2019.06.27 a las 10:59:46 AM ECT 
 //
 
 
@@ -29,8 +29,8 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;sequence&gt;
  *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="searchCriteria" type="{}searchCriteriaType"/&gt;
- *         &lt;element name="encodingRq" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="encodingRs" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="request" type="{}requestConfigType" minOccurs="0"/&gt;
+ *         &lt;element name="response" type="{}responseConfigType" minOccurs="0"/&gt;
  *         &lt;element name="message" type="{}messageType" maxOccurs="unbounded" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
@@ -44,8 +44,8 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "applicationType", propOrder = {
     "name",
     "searchCriteria",
-    "encodingRq",
-    "encodingRs",
+    "request",
+    "response",
     "messages"
 })
 public class ApplicationType
@@ -57,10 +57,8 @@ public class ApplicationType
     protected String name;
     @XmlElement(required = true)
     protected SearchCriteriaType searchCriteria;
-    @XmlElement(required = true)
-    protected String encodingRq;
-    @XmlElement(required = true)
-    protected String encodingRs;
+    protected RequestConfigType request;
+    protected ResponseConfigType response;
     @XmlElement(name = "message")
     protected List<MessageType> messages;
 
@@ -113,51 +111,51 @@ public class ApplicationType
     }
 
     /**
-     * Obtiene el valor de la propiedad encodingRq.
+     * Obtiene el valor de la propiedad request.
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link RequestConfigType }
      *     
      */
-    public String getEncodingRq() {
-        return encodingRq;
+    public RequestConfigType getRequest() {
+        return request;
     }
 
     /**
-     * Define el valor de la propiedad encodingRq.
+     * Define el valor de la propiedad request.
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link RequestConfigType }
      *     
      */
-    public void setEncodingRq(String value) {
-        this.encodingRq = value;
+    public void setRequest(RequestConfigType value) {
+        this.request = value;
     }
 
     /**
-     * Obtiene el valor de la propiedad encodingRs.
+     * Obtiene el valor de la propiedad response.
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link ResponseConfigType }
      *     
      */
-    public String getEncodingRs() {
-        return encodingRs;
+    public ResponseConfigType getResponse() {
+        return response;
     }
 
     /**
-     * Define el valor de la propiedad encodingRs.
+     * Define el valor de la propiedad response.
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link ResponseConfigType }
      *     
      */
-    public void setEncodingRs(String value) {
-        this.encodingRs = value;
+    public void setResponse(ResponseConfigType value) {
+        this.response = value;
     }
 
     /**

@@ -2,7 +2,7 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.3.0 
 // Visite <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2019.06.25 a las 01:41:18 AM ECT 
+// Generado el: 2019.06.27 a las 10:59:46 AM ECT 
 //
 
 
@@ -26,7 +26,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="type" type="{}searchType"/&gt;
+ *         &lt;element name="sourceContent" type="{}sourceContentType"/&gt;
+ *         &lt;element name="searchType" type="{}searchType"/&gt;
  *         &lt;element name="criteria" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="evalValue" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *       &lt;/sequence&gt;
@@ -39,7 +40,8 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "searchCriteriaType", propOrder = {
-    "type",
+    "sourceContent",
+    "searchType",
     "criteria",
     "evalValue"
 })
@@ -48,36 +50,63 @@ public class SearchCriteriaType
 {
 
     private final static long serialVersionUID = -1L;
+    @XmlElement(required = true, defaultValue = "body")
+    @XmlSchemaType(name = "string")
+    protected SourceContentType sourceContent;
     @XmlElement(required = true)
     @XmlSchemaType(name = "string")
-    protected SearchType type;
+    protected SearchType searchType;
     @XmlElement(required = true)
     protected String criteria;
     @XmlElement(required = true)
     protected String evalValue;
 
     /**
-     * Obtiene el valor de la propiedad type.
+     * Obtiene el valor de la propiedad sourceContent.
+     * 
+     * @return
+     *     possible object is
+     *     {@link SourceContentType }
+     *     
+     */
+    public SourceContentType getSourceContent() {
+        return sourceContent;
+    }
+
+    /**
+     * Define el valor de la propiedad sourceContent.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link SourceContentType }
+     *     
+     */
+    public void setSourceContent(SourceContentType value) {
+        this.sourceContent = value;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad searchType.
      * 
      * @return
      *     possible object is
      *     {@link SearchType }
      *     
      */
-    public SearchType getType() {
-        return type;
+    public SearchType getSearchType() {
+        return searchType;
     }
 
     /**
-     * Define el valor de la propiedad type.
+     * Define el valor de la propiedad searchType.
      * 
      * @param value
      *     allowed object is
      *     {@link SearchType }
      *     
      */
-    public void setType(SearchType value) {
-        this.type = value;
+    public void setSearchType(SearchType value) {
+        this.searchType = value;
     }
 
     /**

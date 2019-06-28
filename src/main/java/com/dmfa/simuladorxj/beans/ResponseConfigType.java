@@ -2,7 +2,7 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.3.0 
 // Visite <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2019.06.25 a las 01:41:18 AM ECT 
+// Generado el: 2019.06.27 a las 10:59:46 AM ECT 
 //
 
 
@@ -18,18 +18,19 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para ResponseConfigType complex type.
+ * <p>Clase Java para responseConfigType complex type.
  * 
  * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
- * &lt;complexType name="ResponseConfigType"&gt;
+ * &lt;complexType name="responseConfigType"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="encoding" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="code" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="encoding" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="code" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="header" type="{}headerType" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="delay" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -39,22 +40,24 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ResponseConfigType", propOrder = {
+@XmlType(name = "responseConfigType", propOrder = {
     "encoding",
     "code",
-    "headers"
+    "headers",
+    "delay"
 })
 public class ResponseConfigType
     implements Serializable
 {
 
     private final static long serialVersionUID = -1L;
-    @XmlElement(required = true)
+    @XmlElement(defaultValue = "UTF-8")
     protected String encoding;
-    @XmlElement(required = true)
+    @XmlElement(defaultValue = "200")
     protected String code;
     @XmlElement(name = "header")
     protected List<HeaderType> headers;
+    protected Integer delay;
 
     /**
      * Obtiene el valor de la propiedad encoding.
@@ -131,6 +134,30 @@ public class ResponseConfigType
             headers = new ArrayList<HeaderType>();
         }
         return this.headers;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad delay.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
+     */
+    public Integer getDelay() {
+        return delay;
+    }
+
+    /**
+     * Define el valor de la propiedad delay.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
+     */
+    public void setDelay(Integer value) {
+        this.delay = value;
     }
 
 }

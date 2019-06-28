@@ -14,34 +14,31 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para searchType.
+ * <p>Clase Java para sourceContentType.
  * 
  * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * <p>
  * <pre>
- * &lt;simpleType name="searchType"&gt;
+ * &lt;simpleType name="sourceContentType"&gt;
  *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="string"/&gt;
- *     &lt;enumeration value="regex"/&gt;
- *     &lt;enumeration value="xpath"/&gt;
+ *     &lt;enumeration value="body"/&gt;
+ *     &lt;enumeration value="path"/&gt;
  *   &lt;/restriction&gt;
  * &lt;/simpleType&gt;
  * </pre>
  * 
  */
-@XmlType(name = "searchType")
+@XmlType(name = "sourceContentType")
 @XmlEnum
-public enum SearchType {
+public enum SourceContentType {
 
-    @XmlEnumValue("string")
-    STRING("string"),
-    @XmlEnumValue("regex")
-    REGEX("regex"),
-    @XmlEnumValue("xpath")
-    XPATH("xpath");
+    @XmlEnumValue("body")
+    BODY("body"),
+    @XmlEnumValue("path")
+    PATH("path");
     private final String value;
 
-    SearchType(String v) {
+    SourceContentType(String v) {
         value = v;
     }
 
@@ -49,8 +46,8 @@ public enum SearchType {
         return value;
     }
 
-    public static SearchType fromValue(String v) {
-        for (SearchType c: SearchType.values()) {
+    public static SourceContentType fromValue(String v) {
+        for (SourceContentType c: SourceContentType.values()) {
             if (c.value.equals(v)) {
                 return c;
             }

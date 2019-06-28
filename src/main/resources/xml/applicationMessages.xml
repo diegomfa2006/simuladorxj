@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <config>
   <application>
-    <name>aplicacionPrueba</name>
+    <name>SisCostos</name>
     <searchCriteria>
-      <type>string</type>
-      <criteria>str1234</criteria>
-      <evalValue>str1234</evalValue>
+      <type>path</type>
+      <criteria>backend</criteria>
+      <evalValue>true</evalValue>
     </searchCriteria>
     <request>
-      <encoding>str1234</encoding>
+      <encoding>UTF-8</encoding>
     </request>
     <response>
-      <encoding>str1234</encoding>
-      <code>str1234</code>
+      <encoding>UTF-8</encoding>
+      <code>200</code>
       <header>
         <key>str1234</key>
         <value>str1234</value>

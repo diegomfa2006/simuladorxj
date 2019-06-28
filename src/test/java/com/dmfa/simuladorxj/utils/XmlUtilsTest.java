@@ -15,7 +15,7 @@ class XmlUtilsTest {
 	@Test
 	void parseToObject() {
 		Config config = XmlUtils.parseToObject(new File("src/test/resources/xml/prueba.xml"));
-		assertEquals(1, config.getAplications().size());
+		assertEquals(1, config.getApplications().size());
 	}
 
 	@Test
@@ -23,7 +23,7 @@ class XmlUtilsTest {
 		Config config = new Config();
 		ApplicationType app = new ApplicationType();
 		app.setName("aplicaciongenerado");
-		config.getAplications().add(app);
+		config.getApplications().add(app);
 		
 		System.out.println(XmlUtils.parseToXml(config));
 		assertTrue(XmlUtils.parseToXml(config).contains("aplicaciongenerado"));
