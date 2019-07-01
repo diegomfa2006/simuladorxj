@@ -66,6 +66,7 @@
 						<xjbSource>src/main/resources/xsd/global.xjb</xjbSource>
 					</xjbSources>
 					<clearOutputDir>false</clearOutputDir>
+					<noGeneratedHeaderComments>true</noGeneratedHeaderComments>
 				</configuration>
 			</plugin>
 

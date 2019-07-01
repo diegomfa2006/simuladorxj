@@ -15,11 +15,12 @@
 			<encoding>UTF-8</encoding>
 			<code>200</code>
 			<header>
-				<key>str1234</key>
+				<key>strHeader</key>
 				<value>str1234</value>
 			</header>
 			<delay>123</delay>
 		</response>
+		<basePath>sisCostos</basePath>
 		<message>
 			<name>menu</name>
 			<description>str1234</description>
@@ -37,11 +38,15 @@
 				<code>str1234</code>
 				<header>
 					<key>str1234</key>
-					<value>str1234</value>
+					<value>veamos si sobre</value>
+				</header>
+				<header>
+					<key>Content-Type</key>
+					<value>application/json</value>
 				</header>
 				<delay>123</delay>
 			</response>
-			<responseFile>str1234</responseFile>
+			<responseFile>menu.js</responseFile>
 		</message>
 	</application>
 </config>

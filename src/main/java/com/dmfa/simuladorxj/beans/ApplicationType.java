@@ -1,10 +1,3 @@
-//
-// Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.3.0 
-// Visite <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
-// Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2019.07.01 a las 11:21:02 AM ECT 
-//
-
 
 package com.dmfa.simuladorxj.beans;
 
@@ -31,6 +24,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="searchCriteria" type="{}searchCriteriaType"/&gt;
  *         &lt;element name="request" type="{}requestConfigType" minOccurs="0"/&gt;
  *         &lt;element name="response" type="{}responseConfigType" minOccurs="0"/&gt;
+ *         &lt;element name="basePath" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="message" type="{}messageType" maxOccurs="unbounded" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
@@ -46,6 +40,7 @@ import javax.xml.bind.annotation.XmlType;
     "searchCriteria",
     "request",
     "response",
+    "basePath",
     "messages"
 })
 public class ApplicationType
@@ -59,6 +54,8 @@ public class ApplicationType
     protected SearchCriteriaType searchCriteria;
     protected RequestConfigType request;
     protected ResponseConfigType response;
+    @XmlElement(required = true)
+    protected String basePath;
     @XmlElement(name = "message")
     protected List<MessageType> messages;
 
@@ -156,6 +153,30 @@ public class ApplicationType
      */
     public void setResponse(ResponseConfigType value) {
         this.response = value;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad basePath.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getBasePath() {
+        return basePath;
+    }
+
+    /**
+     * Define el valor de la propiedad basePath.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setBasePath(String value) {
+        this.basePath = value;
     }
 
     /**

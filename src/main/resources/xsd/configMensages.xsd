@@ -16,6 +16,7 @@
 			<xs:element name="searchCriteria" type="searchCriteriaType" nillable="false" />
 			<xs:element name="request" type="requestConfigType" minOccurs="0" />
 			<xs:element name="response" type="responseConfigType" minOccurs="0" />
+			<xs:element name="basePath" type="xs:string" />
 			<xs:element name="message" type="messageType" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>

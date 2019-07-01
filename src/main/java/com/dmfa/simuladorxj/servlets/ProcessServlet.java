@@ -1,5 +1,6 @@
 package com.dmfa.simuladorxj.servlets;
 
+import java.io.File;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
@@ -9,7 +10,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.dmfa.simuladorxj.beans.ApplicationType;
 import com.dmfa.simuladorxj.beans.MessageType;
+import com.dmfa.simuladorxj.utils.FileUtils;
 import com.dmfa.simuladorxj.utils.FindUtils;
+import com.dmfa.simuladorxj.utils.HeaderUtils;
 import com.dmfa.simuladorxj.utils.PersistenceInfoUtils;
 
 /**
@@ -36,14 +39,18 @@ public class ProcessServlet extends HttpServlet {
 
 		if (app!= null) {
 			System.out.println("APP::: " + app.getName());
-			response.getWriter().append("Served at: ").append(request.getContextPath()).append( app.getName());
 			
 			
+			HeaderUtils.setHeaders(response, app.getResponse().getHeaders());
 			MessageType messageType = FindUtils.findMessage(app, request);
 			
 			
 			if(messageType != null) {
-				System.out.println("MENSAJE:: " + messageType.getResponseFile());
+				System.out.println();
+				System.out.println("MENSAJE:: " + app.getBasePath() + File.separator + messageType.getResponseFile());
+				
+				HeaderUtils.setHeaders(response, messageType.getResponse().getHeaders());
+				response.getWriter().append(FileUtils.readFile(getServletContext().getRealPath("/WEB-INF/classes/responses" + File.separator + app.getBasePath() + File.separator + messageType.getResponseFile())));
 			}else {
 				System.out.println("Mensaje no encontrado");
 				
