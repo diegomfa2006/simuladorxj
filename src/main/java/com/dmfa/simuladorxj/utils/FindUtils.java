@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import com.dmfa.simuladorxj.beans.ApplicationType;
 import com.dmfa.simuladorxj.beans.Config;
+import com.dmfa.simuladorxj.beans.MessageType;
 import com.dmfa.simuladorxj.beans.SearchCriteriaType;
 import com.dmfa.simuladorxj.searchs.SearchMethod;
 import com.dmfa.simuladorxj.searchs.impl.SearchRegex;
@@ -20,9 +21,18 @@ public class FindUtils {
 		}
 		return null;
 	}
+	
+	public static MessageType findMessage(ApplicationType application, HttpServletRequest rq) {
+		for (MessageType messageType : application.getMessages()) {
+			if(search(messageType.getSearchCriteria(), rq)) {
+				return messageType;
+			}
+		}
+		return null;
+	}
 
 	
-	public static boolean search(SearchCriteriaType search, HttpServletRequest rq) {
+	private static boolean search(SearchCriteriaType search, HttpServletRequest rq) {
 		String content = null;
 		
 		switch (search.getSourceContent()) {
@@ -34,6 +44,8 @@ public class FindUtils {
 			content = rq.getQueryString(); 
 			break;
 		}
+		
+		System.out.println("CONTENIDO: " +  content);
 		
 		SearchMethod searchMethod = null;
 		switch (search.getSearchType()) {
@@ -49,6 +61,8 @@ public class FindUtils {
 			searchMethod = new SearchString();
 			break;
 		}
+		
+		System.out.println("METODO: " +  searchMethod);
 		
 		return searchMethod.find(search.getCriteria(), search.getEvalValue(), content);
 		

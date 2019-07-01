@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.dmfa.simuladorxj.beans.Config;
+import com.dmfa.simuladorxj.utils.PersistenceInfoUtils;
 import com.dmfa.simuladorxj.utils.XmlUtils;
 
 /**
@@ -38,10 +39,10 @@ public class StartServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		super.init();
         
-        Config config = XmlUtils.parseToObject(new File(getServletContext().getRealPath("/WEB-INF/classes/xml/applicationMessages.xml"))  );
+        Config config = XmlUtils.parseToObject(new File(getServletContext().getRealPath("/WEB-INF/classes/xml/applicationMessages.xml")));
+        PersistenceInfoUtils.setConfig(config);
         System.out.println(".:::: INIT :: " + config.getApplications().size());
 	}
-
 	
 	
 }

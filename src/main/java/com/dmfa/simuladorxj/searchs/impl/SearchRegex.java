@@ -9,10 +9,10 @@ import com.dmfa.simuladorxj.utils.FileUtils;
 public class SearchRegex implements SearchMethod {
 
 	@Override
-	public boolean find(String criteria, String evalValue, String pathContent) {
+	public boolean find(String criteria, String evalValue, String content) {
 
 		Pattern pattern = Pattern.compile(criteria);
-		Matcher matcher = pattern.matcher(FileUtils.readFile(pathContent));
+		Matcher matcher = pattern.matcher(FileUtils.readFile(content));
 		if (matcher.find() && matcher.group(1).equals(evalValue)) {
 			return true;
 		}

@@ -1,10 +1,16 @@
 package com.dmfa.simuladorxj.servlets;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.dmfa.simuladorxj.beans.ApplicationType;
+import com.dmfa.simuladorxj.beans.MessageType;
+import com.dmfa.simuladorxj.utils.FindUtils;
+import com.dmfa.simuladorxj.utils.PersistenceInfoUtils;
 
 /**
  * Servlet implementation class ProcessServlet
@@ -24,7 +30,30 @@ public class ProcessServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		System.out.println(".:::: SERVLET JuJu :: " + PersistenceInfoUtils.getConfig());
+		
+		ApplicationType app = FindUtils.findApplication(PersistenceInfoUtils.getConfig(), request);
+
+		if (app!= null) {
+			System.out.println("APP::: " + app.getName());
+			response.getWriter().append("Served at: ").append(request.getContextPath()).append( app.getName());
+			
+			
+			MessageType messageType = FindUtils.findMessage(app, request);
+			
+			
+			if(messageType != null) {
+				System.out.println("MENSAJE:: " + messageType.getResponseFile());
+			}else {
+				System.out.println("Mensaje no encontrado");
+				
+			}
+			
+			
+		} else {
+			System.out.println("APP::: NO " );
+			response.getWriter().append("Served at: ").append(request.getContextPath()).append( "NO ENCONTRADO" );
+		}
 	}
 
 	/**
