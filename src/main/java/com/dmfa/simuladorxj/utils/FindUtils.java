@@ -1,5 +1,7 @@
 package com.dmfa.simuladorxj.utils;
 
+import java.io.IOException;
+
 import javax.servlet.http.HttpServletRequest;
 
 import com.dmfa.simuladorxj.beans.ApplicationType;
@@ -13,7 +15,7 @@ import com.dmfa.simuladorxj.searchs.impl.SearchXpath;
 
 public class FindUtils {
 	
-	public static ApplicationType findApplication(Config config, HttpServletRequest rq) {
+	public static ApplicationType findApplication(Config config, HttpServletRequest rq) throws IOException {
 		for (ApplicationType applicationType : config.getApplications()) {
 			if(search(applicationType.getSearchCriteria(), rq)) {
 				return applicationType;
@@ -22,7 +24,7 @@ public class FindUtils {
 		return null;
 	}
 	
-	public static MessageType findMessage(ApplicationType application, HttpServletRequest rq) {
+	public static MessageType findMessage(ApplicationType application, HttpServletRequest rq) throws IOException {
 		for (MessageType messageType : application.getMessages()) {
 			if(search(messageType.getSearchCriteria(), rq)) {
 				return messageType;
@@ -32,39 +34,31 @@ public class FindUtils {
 	}
 
 	
-	private static boolean search(SearchCriteriaType search, HttpServletRequest rq) {
-		String content = null;
-		
+	public static String getContent(SearchCriteriaType search, HttpServletRequest rq) throws IOException {
 		switch (search.getSourceContent()) {
 		case PATH:
-			content = rq.getRequestURI();
-			break;
+			return rq.getRequestURI();
 
 		default:
-			content = rq.getQueryString(); 
-			break;
+			return FileUtils.convertToString(rq.getInputStream(), "UTF-8"); 
 		}
-		
-		System.out.println("CONTENIDO: " +  content);
-		
-		SearchMethod searchMethod = null;
+	}
+	
+	public static SearchMethod getSearchMethodByType(SearchCriteriaType search) {
 		switch (search.getSearchType()) {
 		case REGEX:
-			searchMethod = new SearchRegex();
-			break;
+			return new SearchRegex();
 			
 		case XPATH:
-			searchMethod = new SearchXpath();
-			break;
+			return new SearchXpath();
 
 		default:
-			searchMethod = new SearchString();
-			break;
+			return new SearchString();
 		}
-		
-		System.out.println("METODO: " +  searchMethod);
-		
-		return searchMethod.find(search.getCriteria(), search.getEvalValue(), content);
-		
+	}
+	
+	private static boolean search(SearchCriteriaType search, HttpServletRequest rq) throws IOException {
+		SearchMethod searchMethod = getSearchMethodByType(search);
+		return searchMethod.find(search.getCriteria(), search.getEvalValue(), getContent(search, rq));
 	}
 }

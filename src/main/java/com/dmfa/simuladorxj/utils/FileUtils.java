@@ -1,7 +1,9 @@
 package com.dmfa.simuladorxj.utils;
 
+import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintWriter;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -31,4 +33,15 @@ public class FileUtils {
 		}
 	}
 
+	public static String convertToString (InputStream inputStream, String encoding) throws IOException {
+		ByteArrayOutputStream result = new ByteArrayOutputStream();
+		byte[] buffer = new byte[1024];
+		int length;
+		while ((length = inputStream.read(buffer)) != -1) {
+		    result.write(buffer, 0, length);
+		}
+		// StandardCharsets.UTF_8.name() > JDK 7
+		return result.toString(encoding);
+
+	}
 }
