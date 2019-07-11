@@ -49,4 +49,46 @@
 			<responseFile>menu.js</responseFile>
 		</message>
 	</application>
+	
+	<application>
+		<name>SisCostosXML</name>
+		<searchCriteria>
+			<searchType>xpath</searchType>
+			<criteria>/app/@name</criteria>
+			<evalValue>SisCostos</evalValue>
+			<sourceContent>body</sourceContent>
+		</searchCriteria>
+		<request>
+			<encoding>UTF-8</encoding>
+		</request>
+		<response>
+			<encoding>UTF-8</encoding>
+			<code>200</code>
+			<delay>123</delay>
+		</response>
+		<basePath>sisCostos</basePath>
+		<message>
+			<name>menu</name>
+			<description>str1234</description>
+			<searchCriteria>
+				<searchType>xpath</searchType>
+				<criteria>/app/head/@type</criteria>
+				<evalValue>menu</evalValue>
+				<sourceContent>body</sourceContent>
+			</searchCriteria>
+			<request>
+				<encoding>str1234</encoding>
+			</request>
+			<response>
+				<encoding>str1234</encoding>
+				<code>str1234</code>
+				<header>
+					<key>Content-Type</key>
+					<value>application/xml;charset=UTF-8</value>
+				</header>
+				<delay>123</delay>
+			</response>
+			<responseFile>menu.js</responseFile>
+		</message>
+	</application>
 </config>

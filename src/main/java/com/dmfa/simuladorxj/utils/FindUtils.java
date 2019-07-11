@@ -15,6 +15,8 @@ import com.dmfa.simuladorxj.searchs.impl.SearchXpath;
 
 public class FindUtils {
 	
+	public static final String RQ_ATTRIBUTE_CONTENT = "content";
+	
 	public static ApplicationType findApplication(Config config, HttpServletRequest rq) throws IOException {
 		for (ApplicationType applicationType : config.getApplications()) {
 			if(search(applicationType.getSearchCriteria(), rq)) {
@@ -40,7 +42,7 @@ public class FindUtils {
 			return rq.getRequestURI();
 
 		default:
-			return FileUtils.convertToString(rq.getInputStream(), "UTF-8"); 
+			return (String)rq.getAttribute(RQ_ATTRIBUTE_CONTENT); 
 		}
 	}
 	

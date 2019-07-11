@@ -1,7 +1,9 @@
 package com.dmfa.simuladorxj.searchs.impl;
 
-import java.io.FileInputStream;
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -20,15 +22,14 @@ import com.dmfa.simuladorxj.searchs.SearchMethod;
 public class SearchXpath implements SearchMethod {
 
 	@Override
-	public boolean find(String criteria, String evalValue, String pathContent) {
+	public boolean find(String criteria, String evalValue, String content) {
 		try {
-			FileInputStream fileIS = new FileInputStream(pathContent);
+			InputStream fileIS = new ByteArrayInputStream(content.getBytes(StandardCharsets.UTF_8));
 			DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder builder = builderFactory.newDocumentBuilder();
 			Document xmlDocument = builder.parse(fileIS);
 			XPath xPath = XPathFactory.newInstance().newXPath();
 			Node nodeList = (Node) xPath.compile(criteria).evaluate(xmlDocument, XPathConstants.NODE);
-			
 			return evalValue.equals(nodeList.getTextContent());
 			
 		} catch (ParserConfigurationException | XPathExpressionException | SAXException | IOException e) {

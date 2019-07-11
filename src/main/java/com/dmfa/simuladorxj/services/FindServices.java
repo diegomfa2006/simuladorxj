@@ -29,9 +29,14 @@ public class FindServices {
 		System.out.println(ConsoleColors.YELLOW_BRIGHT + "-- Headers --" + ConsoleColors.RESET);
 		printHeadersRq(request);
 		System.out.println(ConsoleColors.YELLOW_BRIGHT + "-- Body Content --" + ConsoleColors.RESET);
-		System.out.println(FileUtils.convertToString(request.getInputStream(), "UTF-8"));
+		request.setAttribute(FindUtils.RQ_ATTRIBUTE_CONTENT, FileUtils.convertToString(request.getInputStream(), "UTF-8"));
+		System.out.println(request.getAttribute(FindUtils.RQ_ATTRIBUTE_CONTENT));
+		
+		
 		
 		ApplicationType app = FindUtils.findApplication(PersistenceInfoUtils.getConfig(), request);
+		
+		
 
 		if (app!= null) {
 			
@@ -39,7 +44,8 @@ public class FindServices {
 			System.out.println(ConsoleColors.PURPLE_BOLD_BRIGHT + "::::::::  SEARCH INFO ::::::::" + ConsoleColors.RESET);
 			System.out.println(ConsoleColors.PURPLE_BRIGHT + "APP: " + ConsoleColors.RESET + app.getName());
 			System.out.print(ConsoleColors.PURPLE_BRIGHT + "Search type: " + ConsoleColors.RESET + app.getSearchCriteria().getSearchType() + "\t");
-			System.out.println(ConsoleColors.PURPLE_BRIGHT + "Content type " + ConsoleColors.RESET + app.getSearchCriteria().getSourceContent());
+			System.out.print(ConsoleColors.PURPLE_BRIGHT + "Content type " + ConsoleColors.RESET + app.getSearchCriteria().getSourceContent() + "\t");
+			System.out.println(ConsoleColors.PURPLE_BRIGHT + "Eval " + ConsoleColors.RESET + app.getSearchCriteria().getEvalValue());
 			
 			
 			HeaderUtils.setHeaders(response, app.getResponse().getHeaders());
