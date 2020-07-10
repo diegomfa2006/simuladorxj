@@ -50,9 +50,9 @@
 	<xs:complexType name="responseConfigType">
 		<xs:sequence>
 			<xs:element name="encoding" type="xs:string" minOccurs="0" default="UTF-8" />
-			<xs:element name="code" type="xs:string" minOccurs="0" default="200" />
+			<xs:element name="code" type="xs:int" minOccurs="0" default="200" />
 			<xs:element name="header" type="headerType" minOccurs="0" maxOccurs="unbounded" />
-			<xs:element name="delay" type="xs:int" minOccurs="0" />
+			<xs:element name="delay" type="xs:long" minOccurs="0" />
 		</xs:sequence>
 	</xs:complexType>
 

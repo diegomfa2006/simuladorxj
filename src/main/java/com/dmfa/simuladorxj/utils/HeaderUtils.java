@@ -8,12 +8,12 @@ import com.dmfa.simuladorxj.beans.HeaderType;
 
 public class HeaderUtils {
 
-	public static HttpServletResponse setHeaders(HttpServletResponse response, List<HeaderType> headers) {
+	public static void setHeaders(HttpServletResponse response, List<HeaderType> headers) {
 		if (headers!=null && !headers.isEmpty()) {
 			for (HeaderType header : headers) {
 				response.setHeader(header.getKey(), header.getValue());
 			}
 		}
-		return response;
+		//return response;
 	}
 }

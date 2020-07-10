@@ -33,7 +33,7 @@
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>ProcessServlet</servlet-name>
-		<url-pattern>/ProcessServlet/*</url-pattern>
+		<url-pattern>/*</url-pattern>
 	</servlet-mapping>
 	<filter-mapping>
 		<filter-name>CORS</filter-name>

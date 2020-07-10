@@ -21,9 +21,9 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
  *         &lt;element name="encoding" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="code" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="code" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
  *         &lt;element name="header" type="{}headerType" maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="delay" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
+ *         &lt;element name="delay" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -47,10 +47,10 @@ public class ResponseConfigType
     @XmlElement(defaultValue = "UTF-8")
     protected String encoding;
     @XmlElement(defaultValue = "200")
-    protected String code;
+    protected Integer code;
     @XmlElement(name = "header")
     protected List<HeaderType> headers;
-    protected Integer delay;
+    protected Long delay;
 
     /**
      * Obtiene el valor de la propiedad encoding.
@@ -81,10 +81,10 @@ public class ResponseConfigType
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link Integer }
      *     
      */
-    public String getCode() {
+    public Integer getCode() {
         return code;
     }
 
@@ -93,10 +93,10 @@ public class ResponseConfigType
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link Integer }
      *     
      */
-    public void setCode(String value) {
+    public void setCode(Integer value) {
         this.code = value;
     }
 
@@ -134,10 +134,10 @@ public class ResponseConfigType
      * 
      * @return
      *     possible object is
-     *     {@link Integer }
+     *     {@link Long }
      *     
      */
-    public Integer getDelay() {
+    public Long getDelay() {
         return delay;
     }
 
@@ -146,10 +146,10 @@ public class ResponseConfigType
      * 
      * @param value
      *     allowed object is
-     *     {@link Integer }
+     *     {@link Long }
      *     
      */
-    public void setDelay(Integer value) {
+    public void setDelay(Long value) {
         this.delay = value;
     }
 

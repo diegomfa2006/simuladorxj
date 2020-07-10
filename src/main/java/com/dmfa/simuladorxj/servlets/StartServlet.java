@@ -13,7 +13,7 @@ import com.dmfa.simuladorxj.utils.PersistenceInfoUtils;
 import com.dmfa.simuladorxj.utils.XmlUtils;
 
 /**
- * Servlet implementation class StartServlet
+ * This servlet is used for initialize the configuration after start the server
  */
 public class StartServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -30,8 +30,9 @@ public class StartServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-		System.out.println(":::::: GET");
+		response.getWriter().append("Recarga de configuracion").append(request.getContextPath());
+		init();
+		System.out.println("...:::::: Recarga de configuracion ::::::...");
 	}
 
 	@Override
